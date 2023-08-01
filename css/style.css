@@ -1,0 +1,35 @@
+.light {
+}
+
+.dark {
+  background-color: #f8e4c6;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: #151605;
+  background-color: #f8e4c6;
+}
+
+.btn-warning {
+  color: #151605;
+  background-color: #f8e4c6;
+}
+
+.btn-primary {
+  color: #151605;
+  background-color: #99def9;
+}
+
+.text-justify { text-align: justify }
+
+span.anchor-5 {
+  margin-top: -6rem; /* height of nav, in this case 54px */
+  display: block;
+  height: 6rem; /* height of nav, in this case 54px */
+  visibility: hidden;
+  position: relative;
+}

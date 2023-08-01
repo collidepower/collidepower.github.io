@@ -1,8 +1,320 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    </head>
-    <body>
-      <h1>Hello World!</h1>
-    </body>
+<html lang="en">
+<p><head markdown="0">
+  <title>Collide+Power</title></p>
+<p><link rel="icon" href="images/logo.svg" type = "image/x-icon"></p>
+<p><meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-TxKWSXbsweFt0o2WqfkfJRRNVaPdzXJ/YLqgStggBVRREXkwU7OKz+xXtqOU4u8+" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+</head></p>
+<body data-bs-offset="25" data-bs-spy="scroll" data-bs-target="#navbar-main" tabindex="0">
+<nav class="navbar fixed-top navbar-light bg-light navbar-expand-lg d-print-none" id="navbar-main">
+<div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <!--<img src="images/logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top"></img>-->
+        Collide+Power
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <span class="navbar-text d-none d-xxl-block">
+      Leaking Inaccessible Data with Software-based Power Side Channels
+    </span>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="nav nav-pills mycolor ms-auto mb-2 mb-lg-0">
+        <a class="nav-link active" aria-current="page" href="#about">About</a>
+        <a class="nav-link" href="#researchers">Researchers</a>
+        <a class="nav-link" href="#principle">Principle</a>
+        <a class="nav-link" href="#variants">Variants</a>
+        <a class="nav-link" href="#impact">Impact</a>
+        <a class="nav-link" href="#mitigations">Mitigations</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="light pt-5 pb-5">
+<p><span class="anchor-5" id="about"></span></p>
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-4 offset-lg-1 text-center">
+<p><img alt="" class="img-fluid col-12" src="images/logo.svg" /></p>
+</div>
+<div class="col-lg-6">
+<div class="row text-left">
+<h1>Collide+Power</h1>
+</div>
+<div class="row pt-2 text-left">
+<h4>Leaking Inaccessible Data with Software-based Power Side Channels</h4>
+</div>
+<div class="row pt-2 text-justify">
+<p><strong>Collide+Power</strong> is a novel method to exploit the fundamental way we build and share components in CPUs. We do not target specific programs but instead the underlying CPU hardware itself. This advance in software-based power side channels echoes the discovery of Meltdown and Spectre &mdash; where similarly, the underlying hardware provided unforeseen attack possibilities, leaking actual data values.</p>
+<p>The root of the problem is that shared CPU components, like the internal memory system, combine attacker data and data from any other application, resulting in a combined leakage signal in the power consumption. Thus, knowing its own data, the attacker can determine the exact data values used in other applications. We present two attacks belonging to the Collide+Power attack family: The first attack breaks the isolation between CPU hyperthreads, leaking arbitrary data across programs. The second attack breaks the isolation between user programs and the operating system, leaking arbitrary data not just from the operating system but any security domain on the same computer.</p>
+<p>The Collide+Power technique can enhance <strong>any</strong> side-channel signal <strong>related to power</strong>, such as RAPL (<a href="https://platypusattack.com">PLATYPUS</a>) or frequency throttling (<a href="https://www.hertzbleed.com">Hertzbleed</a>). While the leakage rates with current proof-of-concepts are comparably low, future attacks may be faster and indicate the necessity of security patches.</p>
+</div>
+<div class="row pt-5">
+<div class="col-lg-4 d-grid gap-2">
+<p><a class="btn btn-primary btn-lg col-12" href="paper/Collide+Power.pdf"><i class="fas fa-book fa-1x"></i> Read</a></p>
+</div>
+<div class="col-lg-4 d-grid gap-2 pt-2 pt-lg-0">
+<p><a class="btn btn-outline-dark btn-lg col-12" data-bs-toggle="modal" href=".modal"><i class="fas fa-quote-right fa-1x"></i> Cite</a></p>
+</div>
+<div class="col-lg-4 d-grid gap-2 pt-2 pt-lg-0">
+<p><a class="btn btn-warning btn-lg col-12" href="https://github.com/iaik/collidepower"><i class="fas fa-flask fa-1x"></i> Try</a></p>
+</div>
+</div>
+<div class="modal fade">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h1>Bibtex</h1>
+<p><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></p>
+</div>
+<div class="modal-body">
+<p>@inproceedings{Kogler2023CollidePower,<br />
+  title = {{Collide+Power: Leaking Inaccessible Data with Software-based Power Side Channels}},<br />
+  author = {Kogler, Andreas and Juffinger, Jonas and Giner, Lukas and Gerlach, Lukas and Schwarzl, Martin and Schwarz, Michael and Gruss, Daniel and Mangard, Stefan},
+  booktitle={USENIX Security},<br />
+  year = {2023},<br />
+}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="dark pt-5 pb-5">
+<p><span class="anchor-5" id="researchers"></span></p>
+<div class="container">
+<div class="row">
+<div class="col-lg-10 offset-lg-1 text-left">
+<h1>Who is behind Collide+Power?</h1>
+<h5><strong>Collide+Power</strong> was discovered and reported by:</h5>
+</div>
+</div>
+<div class="row pt-5 align-items-center">
+<div class="col-lg-5 offset-lg-1 text-left">
+<ul>
+<li><a href="https://andreaskogler.com"><strong>Andreas Kogler</strong></a> - Graz University of Technology</li>
+<li><a href="https://www.jonasjuffinger.com/"><strong>Jonas Juffinger</strong></a> - Graz University of Technology</li>
+<li><a href="https://ginerlukas.com/publications/"><strong>Lukas Giner</strong></a> - Graz University of Technology</li>
+<li><a href="https://twitter.com/____salmon____"><strong>Lukas Gerlach</strong></a> - CISPA Helmholtz Center for Information Security</li>
+<li><a href="https://martinschwarzl.at/"><strong>Martin Schwarzl</strong></a> - Graz University of Technology</li>
+<li><a href="https://misc0110.net/"><strong>Michael Schwarz</strong></a> - CISPA Helmholtz Center for Information Security</li>
+<li><a href="https://gruss.cc/"><strong>Daniel Gruss</strong></a> - Graz University of Technology</li>
+<li><a href="https://www.iaik.tugraz.at/person/stefan-mangard/"><strong>Stefan Mangard</strong></a> - Graz University of Technology</li>
+</ul>
+</div>
+<div class="col-lg-3 offset-lg-1 text-center">
+<p><img alt="" class="col-6 col-md-5 col-lg-9 offset-lg-1" src="images/tugraz.svg" />
+<img alt="" class="col-6 col-md-5 offset-md-1 col-lg-9 offset-lg-1 pt-3" src="images/cispa.svg" /></p>
+</div>
+</div>
+</div>
+</div>
+<div class="light pt-5 pb-5">
+<p><span class="anchor-5" id="principle"></span></p>
+<div class="container">
+<div class="row">
+<div class="col-lg-10 offset-lg-1 text-left">
+<h1>How does Collide+Power work?</h1>
+<h5><strong>Collide+Power</strong> at a high level can be described in the following three steps:</h5>
+</div>
+</div>
+<div class="row pt-5">
+<div class="col-lg-5 offset-lg-1 text-center">
+<p><img alt="" class="pt-2 pb-2 pt-lg-0 pb-lg-0 col-12" src="images/collide+power_step1.svg" /></p>
+</div>
+<div class="col-lg-5 offset-lg-0 text-justify">
+<p>First, the attacker fills the targeted CPU component with attacker-controlled data values. This step can be as simple as moving data to specific memory locations. One of the example components is the CPU cache. In the figure, the attacker fills one <em>cache set</em> with the attacker-controlled data.</p>
+</div>
+</div>
+<div class="row pt-5">
+<div class="col-lg-5 offset-lg-1 text-center">
+<p><img alt="" class="pt-2 pb-2 pt-lg-0 pb-lg-0 col-12" src="images/collide+power_step2.svg" /></p>
+</div>
+<div class="col-lg-5 offset-lg-0 text-justify">
+<p>Second, the attacker forces the victim data to replace or <em>overwrite</em> the attacker-controlled data in the targeted CPU component. For the CPU cache, the victim data is replacing an attacker-controlled cache line, implying that the data might travel over the busses depending on the cache state and, therefore, the attacker-controlled data <strong>collides</strong> with the victim secret.</p>
+</div>
+</div>
+<div class="row pt-5">
+<div class="col-lg-5 offset-lg-1 text-center">
+<p><img alt="" class="pt-2 pb-2 pt-lg-0 pb-lg-0 col-12" src="images/collide+power_step3.svg" /></p>
+</div>
+<div class="col-lg-5 offset-lg-0 text-justify">
+<p>Finally, this collision produces a data-dependent power consumption due to how CPUs are designed and built. Replacing the attacker-controlled value with the secret value consumes more power if more bits have to be changed. By changing the attacker-controlled values and measuring the power consumption over many thousand iterations of this overwriting process, the attacker can find the exact secret value of the victim.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="dark pt-5 pb-5">
+<p><span class="anchor-5" id="variants"></span></p>
+<div class="container">
+<div class="row">
+<div class="col-lg-10 offset-lg-1 text-left">
+<h1>What are the different Collide+Power variants?</h1>
+<h5>The paper proposes two <strong>Collide+Power</strong> variants:</h5>
+</div>
+</div>
+<div class="row pt-5">
+<div class="col-lg-5 offset-lg-1 text-justify">
+<p>In the first variant, a victim program constantly accesses important secret data, e.g., a decryption key to encrypt or decrypt a large chunk of data. The victim constantly reloads the secret into the targeted and shared CPU component during this process. An attacker running on a thread on the same physical core can now use Collide+Power to force <strong>collisions</strong> between the secret and attacker-controlled data. This attack variant assumes that hyperthreading is enabled.</p>
+</div>
+<div class="col-lg-5 offset-lg-0 text-center">
+<p><img alt="" class="pt-2 pb-2 pt-lg-0 pb-lg-0 col-12" src="images/collide+power_variant1.svg" /></p>
+</div>
+</div>
+<div class="row pt-5">
+<div class="col-lg-5 offset-lg-1 text-justify">
+<p>The second variant removes the need for the victim to access the secret data. Here an attacker exploits a so-called prefetch gadget within the operating system. This prefetch gadget can be used to bring arbitrary data into the shared CPU component and again force data <strong>collisions</strong> and recover the data. This variant has drastically reduced leakage rates but does not require hyperthreading.</p>
+</div>
+<div class="col-lg-5 offset-lg-0 text-center">
+<p><img alt="" class="pt-2 pb-2 pt-lg-0 pb-lg-0 col-12" src="images/collide+power_variant2.svg" /></p>
+</div>
+</div>
+</div>
+</div>
+<div class="light pt-5 pb-5">
+<p><span class="anchor-5" id="impact"></span></p>
+<div class="container">
+<div class="row">
+<div class="col-lg-10 offset-lg-1 text-left">
+<h1 id="impact">What is the impact of Collide+Power?</h1>
+<h5>Collide+Power can use any signal related to power:</h5>
+</div>
+</div>
+<div class="col-lg-10 offset-lg-1">
+<div class="row pt-5 text-justify">
+<p>Collide+Power demonstrates data leakage with power side channels beyond what the state-of-the-art assumed. Previous software-based power side-channels attacks like <a href="https://platypusattack.com">PLATYPUS</a> and <a href="https://www.hertzbleed.com">Hertzbleed</a> target cryptographic implementations and require precise knowledge of the algorithm or victim program executed on the target machine. In contrast, Collide+Power targets the CPU memory subsystem, which abstracts the precise implementation away as all programs require the memory subsystem in some way. Furthermore, any signal reflecting the power consumption can be used due to the fundamental physical power leakage exploited by Collide+Power. In the paper, we evaluated the following two interfaces:</p>
+</div>
+<div class="row pt-5">
+<div class="col-lg-2 col-4 text-center">
+<p><img alt="" class="pt-2 pb-2 pt-lg-0 pb-lg-0 col-lg-12" src="images/platypus.svg" /></p>
+</div>
+<div class="col-lg-4 col-8 text-justify">
+<p><em>Running Average Power Limit (RAPL)</em> is an interface that directly reports the power consumption of a modern CPU. Due to the findings of <a href="https://platypusattack.com">PLATYPUS</a> this interface is no longer accessible to unprivileged users. This prohibits using the interface to mount unprivileged Collide+Power attacks.</p>
+</div>
+<div class="col-lg-2 col-4 text-center">
+<p><img alt="" class="pt-2 pb-2 pt-lg-0 pb-lg-0 col-lg-12" src="images/hertzbleed.svg" /></p>
+</div>
+<div class="col-lg-4 col-8 text-justify">
+<p><em>Frequency throttling side channels</em> exploit timing variations due to the adaptive power management of modern CPUs. <a href="https://www.hertzbleed.com">Hertzbleed</a> discovered that these timing variations can be used as replacements to direct power measurements. However, as our evaluation shows, these timing variations are more challenging to exploit than the <em>clean</em> power signal from the RAPL interface.</p>
+</div>
+</div>
+<div class="row pt-5 text-justify">
+<p>Therefore, only the <em>frequency throttling induced timing variations</em> can be used as a signal for Collide+Power in an unprivileged context. This results in strongly reduced leakage rates with the current state-of-the-art, and it is highly unlikely to be the target of a Collide+Power attack as an end-user.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="dark pt-5 pb-5">
+<p><span class="anchor-5" id="mitigations"></span></p>
+<div class="container">
+<div class="row">
+<div class="col-lg-10 offset-lg-1 text-left">
+<h1>How to mitigate Collide+Power?</h1>
+<h5>The root cause for Collide+Power is the hardware:</h5>
+</div>
+</div>
+<div class="row pt-5">
+<div class="col-lg-10 offset-lg-1 text-justify">
+<p>First of all, <em>you</em> <strong>do not need to worry</strong>. The leakage rates of Collide+Power are relatively low with the current state-of-the-art, and it is highly unlikely to be a target of a Collide+Power attack as an end-user. Nevertheless, we assume that <strong>nearly all CPUs are affected</strong> by Collide+Power as the exploited leakage is fundamentally a result of how we build CPUs. Finally, we want to clarify that Collide+Power is no CPU bug, as the shared components were always intended to <em>share</em> data from different security domains.</p>
+<p>Since Collide+Power is a technique <strong>independent</strong> of the power-related signal, possible mitigations must be deployed at a hardware level to prevent the exploited data <em>collisions</em> or at a software or hardware level to prevent an attacker from <em>observing</em> the power-related signal.</p>
+<p>Preventing data collisions in hardware is a highly complex redesign of general-purpose CPUs, which we think is unlikely to happen in the near future due to the number of shared hardware components in a CPU.</p>
+<p>Therefore, the more realistic mitigation is preventing an attacker from observing the power-related signal.
+These mitigations are in line with mitigations against <a href="https://platypusattack.com">PLATYPUS</a> and <a href="https://www.hertzbleed.com">Hertzbleed</a> 
+Therefore, depending on the signal used, there are mitigations.
+For example, all modern operating systems prevent direct access to the RAPL interface for unprivileged users.
+Furthermore, Intel provides a configuration to enable the <em>filtered RAPL</em> mode, which obfuscates the data-dependent power consumption in the interface. 
+Unfortunately, we are unaware of concrete deployed mitigations against frequency throttling side channels.</p>
+<p>We reported Collide+Power to AMD, ARM, and Intel under the responsible disclosure process, and <a href="https://nvd.nist.gov/vuln/detail/CVE-2023-20583">CVE-2023-20583</a> was assigned to Collide+Power.</p>
+<p>AMD and ARM provide dedicated information and guidelines for Collide+Power:</p>
+<ul>
+<li><a href="">AMD-SB-7006</a></li>
+<li><a href="https://developer.arm.com/Arm%20Security%20Center/Collide%20and%20Power">ARM Collide+Power</a></li>
+</ul>
+<p>Intel provides no dedicated guidelines for Collide+Power but provided guidelines for <a href="https://platypusattack.com">PLATYPUS</a> and <a href="https://www.hertzbleed.com">Hertzbleed</a>:</p>
+<ul>
+<li><a href="https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/advisory-guidance/running-average-power-limit-energy-reporting.html">Running Average Power Limit Energy Reporting </a></li>
+<li><a href="https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/best-practices/frequency-throttling-side-channel-guidance.html">Frequency Throttling Side Channel Software Guidance for Cryptography Implementations</a></li>
+</ul>
+<p>Further, general guidelines and information:</p>
+<ul>
+<li><a href="https://developer.arm.com/documentation/ka005111/latest/">Arm CPUs and physical side-channel attacks</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="light pt-5 pb-5">
+<p><span class="anchor-5" id="ack"></span></p>
+<div class="container">
+<div class="row">
+<div class="col-lg-10 offset-lg-1 text-left">
+<h1>Acknowledgements</h1>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-10 offset-lg-1 text-justify">
+<p>We thank the vendors <a href="https://amd.com">AMD</a>, <a href="https://arm.com">ARM</a>, and <a href="https://amd.com">Intel</a> for professionally handling the responsible disclosure.</p>
+<p>We thank Robert Primas, Daniel Weber, and Moritz Lipp for engaging discussions. Furthermore, we thank Brian Johannesmeyer and Jakob Koschel for their help and expertise with the operating system prefetch gadget.</p>
+<p>This research is supported in part by the European Research Council (ERC project FSSec 101076409), the Austrian Science Fund (FWF SFB project SPyCoDe F8504), and the Semiconductor Research Corporation (SRC) Hardware Security Program (HWS). A generous gift from AWS, Red Hat, and Google provided additional funding. Any opinions, findings, conclusions, or recommendations expressed in this paper are those of the authors and do not necessarily reflect the views of the funding parties.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="dark pt-5 pb-5">
+<p><span class="anchor-5" id="ack"></span></p>
+<div class="container">
+<div class="row">
+<div class="col-lg-10 offset-lg-1 text-left">
+<h1>Additional information</h1>
+<h5>You might be wondering why we decided to create another vulnerability name and logo:</h5>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-10 offset-lg-1 text-justify">
+<p><em>Communication.</em> Do you remember what CVE-2020-8694, CVE-2020-8695, CVE-2022-23823, and CVE-2022-24436 are?
+Collide+Power combines elements of these <strong>two</strong> attacks: <a href="https://platypusattack.com">PLATYPUS</a> and <a href="https://www.hertzbleed.com">Hertzbleed</a>.
+Similarly, the logo combines the two elements which enable Collide+Power: Data collisions and a way to measure power consumption.</p>
+<p>The <a href="images/logo.svg">SVG</a> and <a href="images/logo.png">PNG</a> versions of the logo are free to use under a CC0 license.</p>
+</div>
+</div>
+</div>
+</div>
+<footer class="bg-light">
+<div class="container-fluid p-3">
+    <div class="row">
+      <div class="col-lg-12 offset-lg-0 text-center">
+        <i class="fas fa-copyright"></i> 2023 Graz University of Technology. All Rights Reserved.
+        <span class="ml-2 mr-2">|</span>
+        System hosted at <a href="https://github.com">GitHub</a>
+        <span class="ml-2 mr-2">|</span>
+        <a href="https://www.tugraz.at/en/about-this-page/legal-notice">Legal Notice</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--
+<script type="text/javascript" src="js/app.js"></script>
+<script>
+      $(document).ready(function() {
+        $('body').scrollspy({ target: '#navbar-all' })
+        var $nav = $("#navbar-all");
+        $nav.toggleClass('scrolled', $(this).scrollTop() > (15));
+
+        $(document).scroll(function() {
+          var $nav = $("#navbar-all");
+          var $intro = $("#intro");
+          // $nav.toggleClass('scrolled', $(this).scrollTop() > ($intro.height()));
+          $nav.toggleClass('scrolled', $(this).scrollTop() > (15));
+        })
+      });
+    </script>
+-->
+<script crossorigin="anonymous" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
