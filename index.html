@@ -66,19 +66,23 @@
 </div>
 </div>
 <div class="modal fade">
-<div class="modal-dialog modal-dialog-centered">
+<div class="modal-dialog modal-lg modal-dialog-centered">
 <div class="modal-content">
 <div class="modal-header">
 <h1>Bibtex</h1>
 <p><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></p>
 </div>
 <div class="modal-body">
-<p>@inproceedings{Kogler2023CollidePower,<br />
-  title = {{Collide+Power: Leaking Inaccessible Data with Software-based Power Side Channels}},<br />
-  author = {Kogler, Andreas and Juffinger, Jonas and Giner, Lukas and Gerlach, Lukas and Schwarzl, Martin and Schwarz, Michael and Gruss, Daniel and Mangard, Stefan},
-  booktitle={USENIX Security},<br />
-  year = {2023},<br />
-}</p>
+<div class="card card-body">
+<p><pre style="white-space: pre">@inproceedings{Kogler2023CollidePower,
+    title = {{Collide+Power: Leaking Inaccessible Data with Software-based Power Side Channels}},
+    author = {Kogler, Andreas and Juffinger, Jonas and Giner, Lukas and Gerlach, Lukas and 
+        Schwarzl, Martin and Schwarz, Michael and Gruss, Daniel and Mangard, Stefan},
+    booktitle={USENIX Security},
+    year = {2023},
+}
+</pre></p>
+</div>
 </div>
 </div>
 </div>
@@ -234,7 +238,7 @@ Unfortunately, we are unaware of concrete deployed mitigations against frequency
 <p>We reported Collide+Power to AMD, ARM, and Intel under the responsible disclosure process, and <a href="https://nvd.nist.gov/vuln/detail/CVE-2023-20583">CVE-2023-20583</a> was assigned to Collide+Power.</p>
 <p>AMD and ARM provide dedicated information and guidelines for Collide+Power:</p>
 <ul>
-<li><a href="">AMD-SB-7006</a></li>
+<li><a href="https://www.amd.com/en/resources/product-security/bulletin/amd-sb-7006.html">AMD-SB-7006</a></li>
 <li><a href="https://developer.arm.com/Arm%20Security%20Center/Collide%20and%20Power">ARM Collide+Power</a></li>
 </ul>
 <p>Intel provides no dedicated guidelines for Collide+Power but provided guidelines for <a href="https://platypusattack.com">PLATYPUS</a> and <a href="https://www.hertzbleed.com">Hertzbleed</a>:</p>
